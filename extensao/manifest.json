@@ -1,0 +1,23 @@
+{
+    "name":"NovelUpdates-translation",
+    "version":"1.0",
+    "description":"Traduz algumas palavras ao clicar",
+    "permissions": ["tabs", "storage"],
+    "browser_action":{
+        "default_popup":"index.html"
+    },
+    "manifest_version":2,
+    "content_scripts": [
+        {
+          "matches": ["http://*/*","https://*/*"],
+          "js": ["jquery.js"]
+        },
+        {
+          "matches": ["http://novelfull.com/*","https://novelfull.com/*"],
+          "js": ["jquery.js", "script1.js", "script2.js"] 
+        }
+      ],
+      "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+
+
+}
